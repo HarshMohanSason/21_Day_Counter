@@ -12,7 +12,7 @@ I have not uploaded the .exe files here. You would need to compile to code with 
 3. g++ -c main.cpp -o main.o                                        (Compile the main file to .o as well)
 4. g++ main.o sqlite3.o resource.o -lcomctl32 -o 21_day_counter.exe (Compile all the .o files together with -lcomctl32 because the code contains                                                                                dependencies from the Comctl32.dll file so make sure to set the flag)
 
-This will generate all the .exe file which will then look something like this after you add the add the data. 
+This will generate all the .exe file which will then look something like this after you add the add some data. 
 
 ![Screenshot 2024-12-01 182319](https://github.com/user-attachments/assets/aa05021c-3137-429e-b500-07285ade5a3f)
 
