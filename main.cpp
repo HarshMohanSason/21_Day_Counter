@@ -542,6 +542,11 @@ BOOL CALLBACK AddGuestDlgProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lPa
 				 MessageBox(hwnd, "Check out date cannot be less than or equal to the check in date", "Input Error", MB_ICONEXCLAMATION | MB_OK);
                  return FALSE;	
 				}
+	            if (total_days_stayed > 30)
+			    {
+				MessageBox(hwnd, "Guest cannot stay more than 28 days. Please take action immediately", "Exceeds 28 days", MB_ICONEXCLAMATION | MB_OK);
+                return FALSE;
+			    }
 				else{
 				Guest instance = Guest(
                     string(g_GuestName),
@@ -728,7 +733,11 @@ BOOL CALLBACK EditGuestDlgProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lP
                 MessageBox(hwnd, "Check out date cannot be less than or equal to the check in date", "Input Error", MB_ICONEXCLAMATION | MB_OK);
                 return FALSE;
             }
-
+			if (total_days_stayed > 30)
+			{
+			    MessageBox(hwnd, "Guest cannot stay more than 28 days. Please take action immediately", "Exceeds 28 days", MB_ICONEXCLAMATION | MB_OK);
+                return FALSE;
+			}
             // Create a new instance of the guest with updated information
             Guest instance(
                 string(tempGuestName),
